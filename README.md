@@ -1,4 +1,4 @@
-# Simple OCR with pre-processing and post-processing.
+# OCR reader with TessaractOCR.
 
 The command to run: <br />
 
