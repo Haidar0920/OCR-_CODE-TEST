@@ -1,3 +1,6 @@
-# Simple OCR reader with TessaractOCR
-Inteview task
-The command to run: python ocr.py --input=./samples/test_scan.jpg --output=output.txt --verbose
+# Simple OCR with pre-processing and post-processing.
+
+The command to run: <br />
+
+                    python ocr.py --input=./samples/test_scan.jpg --output=output.txt --verbose <br />
+                    
