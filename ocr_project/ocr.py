@@ -18,7 +18,7 @@ def get_image(input, verbose):
         logger = app_logger.get_logger(__name__)
     pdf = False
 
-    # определение формата входных данных
+    # defining the format of the input data
     try:
         if '.jpg' in input:
             image = cv2.imread(input)
@@ -42,7 +42,7 @@ def get_image(input, verbose):
             for img in img_pdf:
                 img = np.array(img)
                 image.append(img)
-        # ошибка в инпуте
+        # if there is an error in the input
         else:
             click.echo('Wrong format! Please, try again!')
     except IOError:
@@ -63,10 +63,10 @@ def get_image(input, verbose):
 def read_doc(input, output, verbose):
     if verbose:
         logger = app_logger.get_logger(__name__)
-    # получить изображение для работы
+    # get an image for work
     image, pdf = get_image(input, verbose)
     logger.info('The image was received correctly')
-    # распознание текста
+    # text recognition
     if pdf:
         all_text = []
         for img in image:
@@ -79,7 +79,7 @@ def read_doc(input, output, verbose):
         logger.info('Text from pdf was written')
     else:
         text = pytesseract.image_to_string(image)
-        # сохранение текста в файл
+        # saving text to file
         with open(output, 'w') as f:
             f.write(text)
         logger.info('Text from image was written')
